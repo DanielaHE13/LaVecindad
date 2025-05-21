@@ -1,19 +1,30 @@
 <?php
-class AdministradorDAO{
+class AdministradorDAO {
     private $id;
     private $nombre;
     private $apellido;
     private $correo;
-    private $telefono;
-    private $fechaNacimiento;
+    private $clave;
 
-    public function __construct($id="", $nombre="", $apellido="", $correo="", $telefono="", $fechaNacimiento=""){
-        $this->idPersona = $id;
+    public function __construct($id = 0, $nombre = "", $apellido = "", $correo = "", $clave = "") {
+        $this->id = $id;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->correo = $correo;
-        $this->telefono = $telefono;
-        $this->fechaNacimiento = $fechaNacimiento;
+        $this->clave = $clave;
     }
+
+     public function autenticar(){
+        return "select idAdministrador
+                from Administrador 
+                where correo = '" . $this -> correo . "' and clave = '" . $this -> clave . "'";
+    }
+    
+    public function consultar(){
+        return "select nombre, apellido, correo
+                from Administrador
+                where idAdministrador = '" . $this -> id . "'";
+    }
+
 }
 ?>
