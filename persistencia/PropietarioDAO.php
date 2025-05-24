@@ -1,5 +1,6 @@
 <?php
-class PropietarioDAO {
+class PropietarioDAO
+{
     private $id;
     private $nombre;
     private $apellido;
@@ -7,7 +8,8 @@ class PropietarioDAO {
     private $clave;
     private $telefono;
 
-    public function __construct($id = 0, $nombre = "", $apellido = "", $correo = "", $clave = "", $telefono = "") {
+    public function __construct($id = 0, $nombre = "", $apellido = "", $correo = "", $clave = "", $telefono = "")
+    {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
@@ -16,17 +18,18 @@ class PropietarioDAO {
         $this->telefono = $telefono;
     }
 
-    public function autenticar() {
-        return "SELECT idPropietario
-                FROM Propietario
-                WHERE correo = '" . $this->correo . "' 
-                  AND clave = SHA2('" . $this->clave . "', 256)";
+    public function autenticar(){
+        return "select idPropietario
+                from Propietario 
+                where correo = '" . $this -> correo . "' and clave = '" . $this -> clave . "'";
     }
 
-    public function consultar() {
-        return "SELECT nombre, apellido, correo, telefono
+    public function consultar()
+    {
+        return "SELECT nombre, apellido, correo, NumeroTelefono
                 FROM Propietario
                 WHERE idPropietario = '" . $this->id . "'";
     }
+
 }
 ?>

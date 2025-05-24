@@ -40,7 +40,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (2,'Alison','Diaz','alison@admin.com','3026986447','1994-08-20','060d8b6b4f4375219f9f'),(3,'pepito','florez','pepito@gmail.com','1234567899','2004-02-20','123'),(1030521677,'Daniela','Huertas','daniela@admin.com','3197159542','2024-02-13','53aeb0ed21e248d32aba');
+INSERT INTO `administrador` VALUES (2,'Alison','Diaz','alison@admin.com','3026986447','1994-08-20','123'),(3,'pepito','florez','pepito@gmail.com','1234567899','2004-02-20','123'),(1030521677,'Daniela','Huertas','daniela@admin.com','3197159542','2024-02-13','123');
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,7 +187,7 @@ CREATE TABLE `propietario` (
 
 LOCK TABLES `propietario` WRITE;
 /*!40000 ALTER TABLE `propietario` DISABLE KEYS */;
-INSERT INTO `propietario` VALUES (123,'Juan','Pérez','juan.perez@example.com','2147483647','1980-05-12','123'),(147,'Ana','Martínez','ana.martinez@example.com','2147483647','1990-02-14','5ac0852e770506dcd80f'),(258,'Luis','Fernández','luis.fernandez@example.com','2147483647','1985-07-22','5ac0852e770506dcd80f'),(321,'Jorge','García','jorge.garcia@example.com','2147483647','1978-12-01','5ac0852e770506dcd80f'),(369,'Sofía','López','sofia.lopez@example.com','2147483647','1993-03-10','5ac0852e770506dcd80f'),(456,'María','Gómez','maria.gomez@example.com','2147483647','1975-08-20','5ac0852e770506dcd80f'),(654,'Laura','Ramírez','laura.ramirez@example.com','2147483647','1987-09-15','5ac0852e770506dcd80f'),(741,'Elena','Torres','elena.torres@example.com','2147483647','1991-01-20','5ac0852e770506dcd80f'),(789,'Carlos','Rodríguez','carlos.rodriguez@example.com','2147483647','1982-11-05','5ac0852e770506dcd80f'),(852,'Miguel','Castillo','miguel.castillo@example.com','2147483647','1986-06-25','5ac0852e770506dcd80f'),(963,'Isabel','Flores','isabel.flores@example.com','2147483647','1984-10-10','5ac0852e770506dcd80f'),(987,'Pedro','Sánchez','pedro.sanchez@example.com','2147483647','1983-04-30','5ac0852e770506dcd80f'),(11111,'Lucy','Erazo','lucyErazo@gmail.com','2312312321','1968-03-21','123');
+INSERT INTO `propietario` VALUES (123,'Juan','Pérez','juan.perez@example.com','2147483647','1980-05-12','123'),(147,'Ana','Martínez','ana.martinez@example.com','214748364','1990-02-14','123'),(258,'Luis','Fernández','luis.fernandez@example.com','21474836','1985-07-22','123'),(321,'Jorge','García','jorge.garcia@example.com','2147483','1978-12-01','123'),(369,'Sofía','López','sofia.lopez@example.com','214748','1993-03-10','123'),(456,'María','Gómez','maria.gomez@example.com','21474','1975-08-20','123'),(654,'Laura','Ramírez','laura.ramirez@example.com','2147','1987-09-15','123'),(741,'Elena','Torres','elena.torres@example.com','214','1991-01-20','123'),(789,'Carlos','Rodríguez','carlos.rodriguez@example.com','21','1982-11-05','123'),(852,'Miguel','Castillo','miguel.castillo@example.com','2','1986-06-25','123'),(963,'Isabel','Flores','isabel.flores@example.com','147483647','1984-10-10','123'),(987,'Pedro','Sánchez','pedro.sanchez@example.com','47483647','1983-04-30','123'),(11111,'Lucy','Erazo','lucyErazo@gmail.com','2312321','1968-03-21','123');
 /*!40000 ALTER TABLE `propietario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -200,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-21  9:49:31
+-- Dump completed on 2025-05-23 19:22:33
