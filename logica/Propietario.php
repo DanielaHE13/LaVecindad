@@ -3,12 +3,15 @@ require_once("../persistencia/Conexion.php");
 require_once("../logica/Persona.php");
 require_once("../persistencia/PropietarioDAO.php");
 
-class Propietario extends Persona {
-    public function __construct($id = "", $nombre = "", $apellido = "", $correo = "", $clave = "", $telefono = "") {
+class Propietario extends Persona
+{
+    public function __construct($id = "", $nombre = "", $apellido = "", $correo = "", $clave = "", $telefono = "")
+    {
         parent::__construct($id, $nombre, $apellido, $correo, $clave, $telefono);
     }
 
-    public function autenticar() {
+    public function autenticar()
+    {
         $conexion = new Conexion();
         $propietarioDAO = new PropietarioDAO("", "", "", $this->correo, $this->clave);
         $conexion->abrir();
@@ -24,7 +27,8 @@ class Propietario extends Persona {
         }
     }
 
-    public function consultar() {
+    public function consultar()
+    {
         $conexion = new Conexion();
         $propietarioDAO = new PropietarioDAO($this->id);
         $conexion->abrir();
@@ -41,5 +45,29 @@ class Propietario extends Persona {
 
         $conexion->cerrar();
     }
+
+    public static function consultarTodos()
+    {
+        $conexion = new Conexion();
+        $propietarioDAO = new PropietarioDAO();
+        $conexion->abrir();
+
+        $conexion->ejecutar($propietarioDAO->consultarTodos());
+
+        $lista = [];
+
+        while ($datos = $conexion->registro()) {
+            $propietario = new Propietario();
+            $propietario->id = $datos[0];
+            $propietario->nombre = $datos[1];
+            $propietario->apellido = $datos[2];
+            $propietario->correo = $datos[3];
+            $propietario->telefono = isset($datos[4]) ? $datos[4] : "";
+
+            $lista[] = $propietario;
+        }
+
+        $conexion->cerrar();
+        return $lista;
+    }
 }
-?>

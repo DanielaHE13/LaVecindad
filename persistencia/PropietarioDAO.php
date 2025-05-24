@@ -18,10 +18,11 @@ class PropietarioDAO
         $this->telefono = $telefono;
     }
 
-    public function autenticar(){
+    public function autenticar()
+    {
         return "select idPropietario
                 from Propietario 
-                where correo = '" . $this -> correo . "' and clave = '" . $this -> clave . "'";
+                where correo = '" . $this->correo . "' and clave = '" . $this->clave . "'";
     }
 
     public function consultar()
@@ -30,6 +31,8 @@ class PropietarioDAO
                 FROM Propietario
                 WHERE idPropietario = '" . $this->id . "'";
     }
-
+    public function consultarTodos()
+    {
+        return "SELECT idPropietario, nombre, apellido, correo, NumeroTelefono FROM Propietario";
+    }
 }
-?>
