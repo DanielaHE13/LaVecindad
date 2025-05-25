@@ -1,7 +1,6 @@
 <?php
 require_once(__DIR__ . "/../persistencia/ApartamentoDAO.php");
 require_once(__DIR__ . "/../persistencia/Conexion.php");
-
 class Apartamento {
     private $idApartamento;
     private $torre;

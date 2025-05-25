@@ -1,7 +1,9 @@
 <?php
 session_start();
-require_once("../logica/Administrador.php");
-require_once("../logica/Propietario.php");
+
+require_once('../logica/Administrador.php');
+require_once('../logica/Apartamento.php');
+require_once('../logica/Propietario.php');
 
 // Procesar formulario
 if (isset($_POST["autenticar"])) {
@@ -12,7 +14,7 @@ if (isset($_POST["autenticar"])) {
     if ($admin->autenticar()) {
         $_SESSION["id"] = $admin->getId();
         $_SESSION["rol"] = "administrador";
-        header("Location: ../presentacion/sesionAdministrador.php");
+        header("Location: ../presentacion/SesionAdministrador.php");
         exit;
     }
 
@@ -20,7 +22,7 @@ if (isset($_POST["autenticar"])) {
     if ($propietario->autenticar()) {
         $_SESSION["id"] = $propietario->getId();
         $_SESSION["rol"] = "propietario";
-        header("Location: ../presentacion/sesionPropietario.php");
+        header("Location: ../presentacion/SesionPropietario.php");
         exit;
     }
 
